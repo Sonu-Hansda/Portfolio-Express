@@ -34,7 +34,7 @@ const MultiForm: React.FC = () => {
         const regEx = /^\d{4}ugcm0(0[0-3]|[1-2][0-9]|30)$/;
         const year = parseInt(registrationNumber.substring(0, 4), 10);
 
-        if (!regEx.test(registrationNumber)) {
+        if (!regEx.test(registrationNumber.toLowerCase())) {
             toast('Invalid registration number! Please check the format.');
             return;
         }
@@ -51,7 +51,7 @@ const MultiForm: React.FC = () => {
         }
 
         const emailRegEx = /^[a-zA-Z0-9._%+-]+@(nitjsr\.ac\.in|gmail\.com)$/;
-        if (!emailRegEx.test(email)) {
+        if (!emailRegEx.test(email.toLowerCase())) {
             toast('Invalid email! Only @nitjsr.ac.in or @gmail.com are allowed.');
             return;
         }

@@ -6,7 +6,7 @@ import whatsAppLogo from '../assets/whatsapp.png';
 const SuccessCard: React.FC = () => {
     const navigate = useNavigate();
 
-    const handleStartAgain = ()=>{
+    const handleStartAgain = () => {
         navigate("/");
     }
     return (
@@ -22,14 +22,15 @@ const SuccessCard: React.FC = () => {
                 Thank you for registering.
             </p>
             <div className='flex items-center justify-center mb-8'>
-            <button
-                onClick={handleStartAgain}
-                className="flex justify-center gap-x-2 items-center px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition duration-300"
+                <a
+                    href='https://chat.whatsapp.com/Ee71IWcUiZW6qmQ0AIMuxE'
+
+                    className="flex justify-center gap-x-2 items-center px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition duration-300"
                 >
-                <img className='h-6' src={whatsAppLogo} />
-                Join Group
-            </button>
-                </div>
+                    <img className='h-6' src={whatsAppLogo} />
+                    Join Group
+                </a>
+            </div>
             <button
                 onClick={handleStartAgain}
                 className="px-6 py-3 bg-gray-50 text-gray-700 rounded-lg hover:bg-gray-300 transition duration-300"

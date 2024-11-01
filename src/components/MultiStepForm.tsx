@@ -32,33 +32,33 @@ const MultiForm: React.FC = () => {
     const handleSubmit = async () => {
         const { registrationNumber, email, firstName, lastName, gender, programmingLanguages, developmentSkills } = formData;
 
-        const cleanRegistrationNumber = registrationNumber.trim().toLowerCase();
-        const cleanEmail = email.trim().toLowerCase();
+        // const cleanRegistrationNumber = registrationNumber.trim().toLowerCase();
+        // const cleanEmail = email.trim().toLowerCase();
 
-        const regEx = /^\d{4}ugcm0(0[0-3]|[1-2][0-9]|30)$/;
-        const year = parseInt(cleanRegistrationNumber.substring(0, 4), 10);
+        // const regEx = /^\d{4}ugcm0(0[0-3]|[1-2][0-9]|30)$/;
+        // const year = parseInt(cleanRegistrationNumber.substring(0, 4), 10);
 
-        if (!regEx.test(cleanRegistrationNumber)) {
-            toast('Invalid registration number! Please check the format.');
-            return;
-        }
+        // if (!regEx.test(cleanRegistrationNumber)) {
+        //     toast('Invalid registration number! Please check the format.');
+        //     return;
+        // }
 
-        if (year < 2022) {
-            toast('Sir, aap yaha kaise? 🤔');
-            return;
-        } else if (year === 2023) {
-            toast('Bhai, ab kya shikhoge? 🤷‍♂️');
-            return;
-        } else if (year > 2024) {
-            toast('Bhai, agle saal aana! 😂');
-            return;
-        }
+        // if (year < 2022) {
+        //     toast('Sir, aap yaha kaise? 🤔');
+        //     return;
+        // } else if (year === 2023) {
+        //     toast('Bhai, ab kya shikhoge? 🤷‍♂️');
+        //     return;
+        // } else if (year > 2024) {
+        //     toast('Bhai, agle saal aana! 😂');
+        //     return;
+        // }
 
-        const emailRegEx = /^[a-zA-Z0-9._%+-]+@(nitjsr\.ac\.in|gmail\.com)$/;
-        if (!emailRegEx.test(cleanEmail)) {
-            toast('Invalid email! Only @nitjsr.ac.in or @gmail.com are allowed.');
-            return;
-        }
+        // const emailRegEx = /^[a-zA-Z0-9._%+-]+@(nitjsr\.ac\.in|gmail\.com)$/;
+        // if (!emailRegEx.test(cleanEmail)) {
+        //     toast('Invalid email! Only @nitjsr.ac.in or @gmail.com are allowed.');
+        //     return;
+        // }
 
         const formDataToSend = new FormData();
         formDataToSend.append('fullName', `${firstName} ${lastName}`);

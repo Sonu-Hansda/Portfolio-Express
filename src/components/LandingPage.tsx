@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const LandingPage: React.FC = () => {
     const [displayText, setDisplayText] = useState('');
-    const fullText = 'Poortfolio Press';
+    const fullText = 'Poortfolio Express';
     const typingSpeed = 200;
     const navigate = useNavigate();
 

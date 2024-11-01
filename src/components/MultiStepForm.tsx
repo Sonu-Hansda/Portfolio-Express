@@ -7,7 +7,7 @@ import SuccessCard from './SuccessCard';
 
 const MultiForm: React.FC = () => {
     const [step, setStep] = useState(1);
-    const [isLoading,setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -31,10 +31,14 @@ const MultiForm: React.FC = () => {
     };
     const handleSubmit = async () => {
         const { registrationNumber, email, firstName, lastName, gender, programmingLanguages, developmentSkills } = formData;
-        const regEx = /^\d{4}ugcm0(0[0-3]|[1-2][0-9]|30)$/;
-        const year = parseInt(registrationNumber.substring(0, 4), 10);
 
-        if (!regEx.test(registrationNumber.toLowerCase())) {
+        const cleanRegistrationNumber = registrationNumber.trim().toLowerCase();
+        const cleanEmail = email.trim().toLowerCase();
+
+        const regEx = /^\d{4}ugcm0(0[0-3]|[1-2][0-9]|30)$/;
+        const year = parseInt(cleanRegistrationNumber.substring(0, 4), 10);
+
+        if (!regEx.test(cleanRegistrationNumber)) {
             toast('Invalid registration number! Please check the format.');
             return;
         }
@@ -51,7 +55,7 @@ const MultiForm: React.FC = () => {
         }
 
         const emailRegEx = /^[a-zA-Z0-9._%+-]+@(nitjsr\.ac\.in|gmail\.com)$/;
-        if (!emailRegEx.test(email.toLowerCase())) {
+        if (!emailRegEx.test(cleanEmail)) {
             toast('Invalid email! Only @nitjsr.ac.in or @gmail.com are allowed.');
             return;
         }
@@ -81,7 +85,7 @@ const MultiForm: React.FC = () => {
             }
         } catch (error) {
             toast.error("Something went wrong");
-        } finally{
+        } finally {
             setIsLoading(false);
         }
     };

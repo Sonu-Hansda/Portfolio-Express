@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
+import LandingPage from "./pages/LandingPage";
 import MultiStepForm from "./components/MultiStepForm";
 import Layout from "./components/Layout";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import ResourcePage from "./pages/ResourcePage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/registration" element={<MultiStepForm />} />
+          <Route path="/resources" element={<ResourcePage />} />
         </Routes>
       </Layout>
       <ToastContainer />

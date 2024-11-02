@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const location = useLocation();
@@ -12,6 +12,26 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     };
 
     return (
+        <>
+            <nav className="navbar bg-base-100 md:px-32">
+                <div className="flex-1">
+                    <a className="btn btn-ghost text-xl">ECM</a>
+                </div>
+                <div className="flex-none">
+                    <ul className="menu menu-horizontal px-1">
+                        <Link to={"/resources"}>Resources</Link>
+                        {/* <li>
+                            <details>
+                                <summary>Parent</summary>
+                                <ul className="bg-base-100 rounded-t-none p-2">
+                                    <li><a>Link 1</a></li>
+                                    <li><a>Link 2</a></li>
+                                </ul>
+                            </details>
+                        </li> */}
+                    </ul>
+                </div>
+            </nav>
             <motion.div
                 key={location.key}
                 initial="initial"
@@ -22,6 +42,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             >
                 {children}
             </motion.div>
+        </>
     );
 };
 

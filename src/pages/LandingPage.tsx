@@ -35,6 +35,7 @@ const LandingPage: React.FC = () => {
                 <motion.img
                     className="relative md:absolute md:right-40 md:top-32 h-52 w-full md:w-auto object-contain md:h-96 z-10 md:mx-auto mb-4"
                     src={backgrounImage}
+                    loading="lazy"
                     initial={{ y: 0 }}
                     animate={{ y: [0, -10, 0] }}
                     transition={{

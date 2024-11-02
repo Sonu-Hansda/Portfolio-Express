@@ -15,7 +15,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <>
             <nav className="navbar bg-base-100 md:px-32">
                 <div className="flex-1">
-                    <a className="btn btn-ghost text-xl">ECM</a>
+                    <Link to={"/"} className="btn btn-ghost text-xl">ECM</Link>
                 </div>
                 <div className="flex-none">
                     <ul className="menu menu-horizontal px-1">

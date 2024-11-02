@@ -13,9 +13,13 @@ const ResourcePage: React.FC = () => {
                                 <h1 className='font-semibold mb-2'>Development Environment Setup</h1>
                                 <a href='https://www.youtube.com/watch?v=0gU-qrq3gjU&list=PLDzeHZWIZsTo0wSBcg4-NMIbC0L8evLrD&index=4&ab_channel=CodeHelp-byBabbar' target='_blank' className='bg-teal-500 px-4 py-2 rounded'>view</a>
                                </div>
-                               <div className='shadow-xl shadow-base-200 px-4 py-2 rounded'>
+                               <div className='shadow-xl shadow-base-200 px-4 py-2 rounded mb-4'>
                                 <h1 className='font-semibold mb-2'>Basic HTML Structure & Tags</h1>
                                 <a href='https://www.youtube.com/watch?v=KdWPGqT5GwE&list=PLDzeHZWIZsTo0wSBcg4-NMIbC0L8evLrD&index=5&ab_channel=CodeHelp-byBabbar' target='_blank' className='bg-teal-500 px-4 py-2 rounded'>view</a>
+                               </div>
+                               <div className='shadow-xl shadow-base-200 px-4 py-2 rounded'>
+                                <h1 className='font-semibold mb-2'>HTML Cheatsheet</h1>
+                                <a href='https://filebin.net/2yl42pzq1bnhweml/Html%20Cheatsheet.pdf' target='_blank' className='bg-teal-500 px-4 py-2 rounded'>view</a>
                                </div>
                             </div>
                         </details>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaGithub, FaHtml5, FaRegFile } from 'react-icons/fa6';
+import { FaCss3, FaGithub, FaHtml5, FaRegFile } from 'react-icons/fa6';
 import { VscVscode } from 'react-icons/vsc';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -52,7 +52,7 @@ const resourceData: ResourceData[] = [
     },
     {
         day: 2,
-        done: false,
+        done: true,
         resources: [
             {
                 icon: <FaGithub />,
@@ -73,6 +73,22 @@ const resourceData: ResourceData[] = [
             ]
         }
     },
+    {
+        day: 3,
+        done: false,
+        resources: [
+            {
+                icon: <FaCss3 />,
+                title: 'Learn Basic CSS (Lecture 13 - 20)',
+                link: 'https://www.youtube.com/watch?v=tU4xz1r_aE8&list=PLDzeHZWIZsTo0wSBcg4-NMIbC0L8evLrD&index=13&ab_channel=CodeHelp-byBabbar'
+            },
+            {
+                icon: <FaRegFile />,
+                title: 'CSS Cheatsheet',
+                link: 'https://filebin.net/iqf2gqrz8m3q5267/CSS%20Cheatsheet.pdf'
+            }
+        ],
+    },
 ];
 
 const ResourceItem: React.FC<Resource> = ({ icon, title, link }) => (
@@ -84,7 +100,7 @@ const ResourceItem: React.FC<Resource> = ({ icon, title, link }) => (
 );
 
 const DynamicForm: React.FC<{ formConfig: FormConfig }> = ({ formConfig }) => {
-    const [loading,setLoading] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(false);
     const [formData, setFormData] = useState<Record<string, string>>({});
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -110,7 +126,7 @@ const DynamicForm: React.FC<{ formConfig: FormConfig }> = ({ formConfig }) => {
         } catch (error) {
             console.error('Error submitting form:', error);
             toast.error('An error occurred. Please try again later.');
-        }finally{
+        } finally {
             setLoading(false);
         }
     };
@@ -132,7 +148,7 @@ const DynamicForm: React.FC<{ formConfig: FormConfig }> = ({ formConfig }) => {
                         />
                     </div>
                 ))}
-                <button className={loading?'loading loading-spinner text-teal-500 mx-4':'bg-teal-500 px-4 py-2 hover:bg-teal-700 rounded'} disabled={loading} type="submit">Submit</button>
+                <button className={loading ? 'loading loading-spinner text-teal-500 mx-4' : 'bg-teal-500 px-4 py-2 hover:bg-teal-700 rounded'} disabled={loading} type="submit">Submit</button>
             </form>
         </div>
     );
@@ -141,7 +157,7 @@ const DynamicForm: React.FC<{ formConfig: FormConfig }> = ({ formConfig }) => {
 const ResourcePage = () => {
     return (
         <section className='p-4'>
-            <ToastContainer/>
+            <ToastContainer />
             <ul className="timeline timeline-compact timeline-vertical">
                 {resourceData.map((day, index) => (
                     <li key={day.day}>

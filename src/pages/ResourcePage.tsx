@@ -75,7 +75,7 @@ const resourceData: ResourceData[] = [
     },
     {
         day: 3,
-        done: false,
+        done: true,
         resources: [
             {
                 icon: <FaCss3 />,
